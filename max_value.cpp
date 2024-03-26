@@ -17,4 +17,5 @@ double calculateMaxValue(double* nums, int n) {
 			resmax = max(res);
 		}
 	}
+	return resmax;
 }
