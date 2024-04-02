@@ -1,5 +1,6 @@
 #include "eratosthenes.h"
 #include <vector>
+#include <cstring>
 
 std::vector<int> sieve(int n) {
     bool* prime = new bool[n + 1];
