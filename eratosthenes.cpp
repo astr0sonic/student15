@@ -2,16 +2,17 @@
 #include <vector>
 
 std::vector<int> sieve(int n) {
+    bool* prime = new bool[n + 1];
+    memset(prime, true, sizeof(prime));
+    for (int p = 2; p * p <= n; p++) {
+        if (prime[p]) {
+            for (int i = p * p; i <= n; i += p)
+                prime[i] = false;
+        }
+    }
     std::vector<int> primes;
-	std::vector<bool> a(n + 1, 1);
-	for (int i = 2; i * i <= n; i++) {
-		if (a[i]) {
-			for (int j = i * i; j < n + 1; j += i) a[j] = 0;
-		}
-	}
-
-	for (int i = 2; i <= n; i++)
-		if (a[i])
-			primes.push_back(i);
+    for (int p = 2; p <= n; p++)
+        if (prime[p])
+            primes.push_back(p);
     return primes;
 }
