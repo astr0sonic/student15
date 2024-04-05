@@ -17,7 +17,7 @@ int getMaxVolume(int a, int b, int c, int n, int* arr) {
 
 	while (i1 != i2)
 	{
-		if (std::min(i1, i2) <= c)
+		if (std::min(arr[i1], arr[i2]) <= c)
 			max = std::max<int>(max, (i2 - i1) * std::min({ arr[i1], arr[i2] }));
 		if (arr[i1] == std::min(arr[i1], arr[i2]))
 			i1++;
