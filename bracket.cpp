@@ -1,6 +1,6 @@
 #include "bracket.h"
 
-bool checkBrackets(const std::string& s) {
+bool isCorrect(string s) {
 	bool flag = true;;
 	for (int i = 0; i < s.size(); i++) {
 		char c = s[i];
@@ -17,7 +17,7 @@ bool checkBrackets(const std::string& s) {
 				i++;
 				c = s[i];
 			}
-			if (!checkBrackets(l)) return false;
+			if (!isCorrect(l)) return false;
 			break;
 		case '[':
 			i++;
@@ -30,7 +30,7 @@ bool checkBrackets(const std::string& s) {
 				i++;
 				c = s[i];
 			}
-			if (!checkBrackets(l)) return false;
+			if (!isCorrect(l)) return false;
 			break;
 		case '{':
 			i++;
@@ -43,7 +43,7 @@ bool checkBrackets(const std::string& s) {
 				i++;
 				c = s[i];
 			}
-			if (!checkBrackets(l)) return false;
+			if (!isCorrect(l)) return false;
 			break;
 		case '<':
 			i++;
@@ -56,7 +56,7 @@ bool checkBrackets(const std::string& s) {
 				i++;
 				c = s[i];
 			}
-			if (!checkBrackets(l)) return false;
+			if (!isCorrect(l)) return false;
 			break;
 		default:
 			if (c == ')' || c == ']' || c == '}' || c == '>') return false;
@@ -65,3 +65,8 @@ bool checkBrackets(const std::string& s) {
 	}
 	return true;
 }
+
+bool checkBrackets(const std::string& s) {
+    return isCorrect(s);
+}
+
