@@ -1,4 +1,7 @@
 #include "bracket.h"
+#include <string>
+
+using namespace std;
 
 bool isCorrect(string s) {
 	bool flag = true;;
