@@ -103,7 +103,7 @@ std::string checkCorrect(std::istream& in) {
 double calculate(std::string const& in)
 {
     std::stringstream str(in);
-    std::string s = checkCorrect(std);
+    std::string s = checkCorrect(str);
     if (s == "invalid") {
         throw std::exception();
     }
