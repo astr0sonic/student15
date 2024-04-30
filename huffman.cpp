@@ -28,8 +28,8 @@ void c(Tree* root, string s, unordered_map<char, string>& code) {
 		code[root->c] = s;
 	}
 
-	encode(root->left, s + '0', code);
-	encode(root->right, s + '1', code);
+	c(root->left, s + '0', code);
+	c(root->right, s + '1', code);
 }
 
 std::string encode(const std::string& s) {
