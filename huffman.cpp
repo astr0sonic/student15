@@ -13,6 +13,14 @@ struct Tree {
 	Tree* left, * right;
 };
 
+struct comp
+{
+	bool operator()(Tree* l, Tree* r)
+	{
+		return l->count > r->count;
+	}
+};
+
 void c(Tree* root, string s, unordered_map<char, string>& code) {
 	if (root == nullptr) return;
 
