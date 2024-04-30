@@ -7,6 +7,12 @@
 
 using namespace std;
 
+struct Tree {
+	char c;
+	int count;
+	Tree* left, * right;
+};
+
 void c(Tree* root, string s, unordered_map<char, string>& code) {
 	if (root == nullptr) return;
 
