@@ -1,6 +1,8 @@
 #include "lzw.h"
 #include <map>
 
+using namespace std;
+
 std::vector<int> compress(const std::string& s) {
 	map<string, int> codes;
 	for (int i = 0; i < 256; i++) {
