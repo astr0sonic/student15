@@ -13,7 +13,7 @@ std::vector<int> compress(const std::string& s) {
 	for (int i = 1; i < s.size(); i++) {
 		char y = s[i];
 		string xy = x + y;
-		if (codes[xy]) {
+		if (codes.find(xy) != codes.end()) {
 			x = xy;
 		}
 		else {
